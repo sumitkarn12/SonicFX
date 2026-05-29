@@ -1,0 +1,29 @@
+{
+  "name": "sonicfx",
+  "version": "1.1.0",
+  "description": "A lightweight, zero-dependency JavaScript framework for synthesizing UI and game sound effects using the Web Audio API.",
+  "main": "src/sonicfx.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumitkarn12/sonicfx.git"
+  },
+  "keywords": [
+    "webaudio-api",
+    "audio-synthesis",
+    "sfx",
+    "sound-effects",
+    "game-dev",
+    "ui-audio",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sumitkarn12/sonicfx/issues"
+  },
+  "homepage": "https://github.com/sumitkarn12/sonicfx#readme"
+}

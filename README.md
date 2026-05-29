@@ -25,12 +25,12 @@ Relying entirely on visual cues (like toast messages or modal popups) can leave 
 ### Production CDN (Recommended)
 Load the framework instantly via the highly optimized jsDelivr global network. Drop this script tag directly into your HTML document:
 
+##### Minified version:
 ```html
-Minified version:
 <script src="https://cdn.jsdelivr.net/gh/sumitkarn12/sonicfx@latest/src/sonicfx.min.js"></script>
 ```
+##### Non-Minified version:
 ```html
-Non-Minified version:
 <script src="https://cdn.jsdelivr.net/gh/sumitkarn12/sonicfx@latest/src/sonicfx.min.js"></script>
 ```
 

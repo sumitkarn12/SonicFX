@@ -4,7 +4,6 @@ A lightweight, high-performance, zero-dependency JavaScript framework for synthe
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Size](https://img.shields.io/badge/size-<3KB_gzipped-brightgreen)]()
-[![PRs-Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg)](http://makeapullrequest.com)
 
 Relying entirely on visual cues (like toast messages or modal popups) can leave an application feeling flat. `SonicFX` adds a robust, dynamic audio layer—**without bloating your bundle size** with heavy `.mp3` or `.wav` files.
 
@@ -27,6 +26,11 @@ Relying entirely on visual cues (like toast messages or modal popups) can leave 
 Load the framework instantly via the highly optimized jsDelivr global network. Drop this script tag directly into your HTML document:
 
 ```html
+Minified version:
+<script src="https://cdn.jsdelivr.net/gh/sumitkarn12/sonicfx@latest/src/sonicfx.min.js"></script>
+```
+```html
+Non-Minified version:
 <script src="https://cdn.jsdelivr.net/gh/sumitkarn12/sonicfx@latest/src/sonicfx.min.js"></script>
 ```
 

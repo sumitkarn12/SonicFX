@@ -23,11 +23,11 @@ Relying entirely on visual cues (like toast messages or modal popups) can leave 
 
 ## 🚀 Installation & Setup
 
-### CDN / Script Tag
-Drop the framework directly into your HTML document:
+### Production CDN (Recommended)
+Load the framework instantly via the highly optimized jsDelivr global network. Drop this script tag directly into your HTML document:
 
 ```html
-<script src="src/sonicfx.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/sumitkarn12/sonicfx@latest/src/sonicfx.min.js"></script>
 ```
 
 ## 🕹️ Quick Start Usage

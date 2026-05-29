@@ -1,7 +1,7 @@
 /**
  * SonicFX - A lightweight Web Audio API Sound Effects Framework
  * @version 1.1.0 (With Centralized Mute & Event Dispatching)
- * @author Experienced JS Dev
+ * @author Sumit Karn
  * @license MIT
  */
 const SonicFX = (() => {

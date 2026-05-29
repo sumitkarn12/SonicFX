@@ -99,7 +99,7 @@ window.addEventListener('sonicfx-mute-toggle', (event) => {
 | Method | Target Waveform | Sound Profile Description |
 | :--- | :--- | :--- |
 | `SonicFX.success()` | `sine` | A rapid, clean two-tone rising chime ($C_5 \rightarrow E_5$) with an exponential gain decay. |
-| `SonicFX.error()` | `sawtooth` | A buzzed, dual-pulse harsh frequency dive down to 85Hz designed for high visibility alerts. |
+| `SonicFX.error()` | `triangle` | A buzzed, dual-pulse harsh frequency dive down to 85Hz designed for high visibility alerts. |
 | `SonicFX.warning()` | `triangle` | Alternating medium-frequency alert pulses ($G_4 \rightarrow F_4$) to denote soft non-blocking errors. |
 | `SonicFX.info()` | `sine` | A transparent, quick single-pulse frequency blip ($A_4$). |
 | `SonicFX.click()` | `sine` | An ultra-fast transient pitch slide mimicking a clean mechanical click element. |
@@ -110,7 +110,7 @@ window.addEventListener('sonicfx-mute-toggle', (event) => {
 | :--- | :--- | :--- |
 | `SonicFX.celebration()` | `triangle` | A 4-voice stacked harmonic arpeggio structure playing an ascending triumph fanfare chord. |
 | `SonicFX.levelUp()` | `sine` | A continuous, mathematical exponential frequency sweep ($C_4 \rightarrow C_6$). |
-| `SonicFX.laser()` | `sawtooth` | A rapid exponential downward slide starting from 1200Hz down to 80Hz mimicking classic arcade SFX. |
+| `SonicFX.laser()` | `triangle` | A rapid exponential downward slide starting from 1200Hz down to 80Hz mimicking classic arcade SFX. |
 | `SonicFX.powerUp()` | `triangle` | A rapid stepped, multi-frequency rhythmic ladder climbing element. |
 | `SonicFX.unlock()` | `sine` | A complex three-tone musical progression (Low $\rightarrow$ High $\rightarrow$ Medium) signifying structural access. |
 

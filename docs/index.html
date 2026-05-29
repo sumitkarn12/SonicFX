@@ -2,156 +2,168 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SonicFX — Web Audio API Sound Effects Framework</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Styling adjustments utilizing Bulma 1.0+ design tokens */
-    .hero-title {
-      background: linear-gradient(to right, #60a5fa, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 800;
-    }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SonicFX — Web Audio API Sound Effects Framework</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style>
+		/* Styling adjustments utilizing Bulma 1.0+ design tokens */
+		.hero-title {
+			background: linear-gradient(to right, #60a5fa, #a78bfa);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-weight: 800;
+		}
 
-    .box.fx-card {
-      cursor: pointer;
-      transition: transform 0.1s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
+		.box.fx-card {
+			cursor: pointer;
+			transition: transform 0.1s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+		}
 
-    .box.fx-card:hover {
-      border-color: var(--bulma-link);
-      transform: translateY(-3px);
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
-    }
+		.box.fx-card:hover {
+			border-color: var(--bulma-link);
+			transform: translateY(-3px);
+			box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+		}
 
-    .box.fx-card:active {
-      transform: translateY(1px);
-    }
-  </style>
+		.box.fx-card:active {
+			transform: translateY(1px);
+		}
+    .setup-block .snippet  { overflow-x: auto; }
+	</style>
 </head>
 
 <body>
 
-  <section class="section">
-    <div class="container">
+	<section class="section">
+		<div class="container">
 
-      <header class="columns is-mobile is-vcentered is-multiline mb-6">
-        <div class="column is-12-mobile is-auto-tablet">
-          <h1 class="title is-2 hero-title mb-2">SonicFX</h1>
-          <p class="subtitle is-6 has-text-grey-light">A lightweight, zero-dependency audio synthesis documentation
-            dashboard.</p>
-        </div>
-        <div class="column is-12-mobile is-narrow-tablet">
-          <div class="buttons is-fullwidth-mobile">
-            <a href="https://github.com/sumitkarn12/SonicFX" target="_blank"
-              class="button is-rounded is-fullwidth-mobile mb-2-mobile">
-              <span class="icon"><i class="fab fa-github"></i></span>
-              <span>GitHub Repo</span>
-            </a>
-            <button id="muteBtn" class="button is-link is-rounded is-fullwidth-mobile">
+			<header class="columns is-mobile is-vcentered is-multiline mb-6">
+				<div class="column is-12-mobile is-auto-tablet">
+					<h1 class="title is-2 hero-title mb-2">SonicFX</h1>
+					<p class="subtitle is-6 has-text-grey-light">A lightweight, zero-dependency audio synthesis
+						documentation dashboard.</p>
+				</div>
+				<div class="column is-12-mobile is-narrow-tablet">
+					<div class="buttons is-fullwidth-mobile">
+						<a href="https://github.com/sumitkarn12/SonicFX" target="_blank"
+							class="button is-rounded is-fullwidth-mobile mb-2-mobile">
+							<span class="icon"><i class="fab fa-github"></i></span>
+							<span>GitHub Repo</span>
+						</a>
+						<button id="muteBtn" class="button is-link is-rounded is-fullwidth-mobile">
               <span class="icon"><i id="muteIcon" class="fas fa-volume-up"></i></span>
               <span id="muteText">Mute Audio</span>
             </button>
-          </div>
+					</div>
+				</div>
+			</header> 
+
+			<h2 class="title is-4">🚀 Quick Setup</h2>
+      <div class="setup-block">
+        <div class="box">
+          <div class="has-text-grey-light pb-4"><span class="tag">jsDelivr</span> CDN Script Tag</div>
+          <div class="has-text-link-light pb-6 snippet">&lt;script src="https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.min.js"&gt;&lt;/script&gt;</div>
+          <button data-text="<script src='https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.min.js'></script>" class="button is-rounded" onclick="copyCDNLink( this )"><span class="icon"><i id="copyCDNLink" class="fas fa-copy"></i></span><span>Copy</span></button>
         </div>
-      </header>
-
-      <div class="box mb-6">
-        <h2 class="title is-4 mb-4">🚀 Quick Setup</h2>
-
-        <div class="label has-text-grey-light"><span class="tag">jsDelivr</span> CDN Script Tag</div>
-        <pre class="has-background-black-bis has-text-link-light p-4 is-radiusless"
-          style="border-radius: 6px; overflow-x: auto;"><code>&lt;script src="https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.js"&gt;&lt;/script&gt;</code></pre>
-        <button class="button is-rounded" onclick="copyCDNLink( this )"><span class="icon"><i id="copyCDNLink"
-              class="fas fa-copy"></i></span><span>Copy</span></button>
+        <div class="box">
+          <div class="has-text-grey-light pb-4"><span class="tag">jsDelivr</span> CDN Non-Minified version</div>
+          <div class="has-text-link-light pb-6 snippet">https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.js</div>
+          <button data-text="https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.js" class="button is-rounded" onclick="copyCDNLink( this )"><span class="icon"><i id="copyCDNLink" class="fas fa-copy"></i></span><span>Copy</span></button>
+        </div>
+        <div class="box">
+          <div class="has-text-grey-light pb-4"><span class="tag">jsDelivr</span> CDN Minified version</div>
+          <div class="has-text-link-light pb-6 snippet">https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.min.js</div>
+          <button data-text="https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.min.js" class="button is-rounded" onclick="copyCDNLink( this )"><span class="icon"><i id="copyCDNLink" class="fas fa-copy"></i></span><span>Copy</span></button>
+        </div>
       </div>
 
-      <div class="heading has-text-grey-light mb-4">UI & Notifications Sandbox</div>
-      <div class="columns is-multiline is-mobile mb-5">
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('success')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Success</h3>
-            <span class="tag is-info-light">SonicFX.success()</span>
-          </div>
-        </div>
+			<h2 class="title is-4 mt-6">🧪 UI & Notifications Sandbox</h2>
+			<div class="columns is-multiline is-mobile mb-5">
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('error')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Error</h3>
-            <span class="tag is-info-light">SonicFX.error()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('success')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Success</h3>
+						<span class="tag is-info-light">SonicFX.success()</span>
+					</div>
+				</div>
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('warning')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Warning</h3>
-            <span class="tag is-info-light">SonicFX.warning()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('error')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Error</h3>
+						<span class="tag is-info-light">SonicFX.error()</span>
+					</div>
+				</div>
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('info')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Info</h3>
-            <span class="tag is-info-light">SonicFX.info()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('warning')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Warning</h3>
+						<span class="tag is-info-light">SonicFX.warning()</span>
+					</div>
+				</div>
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('click')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Click</h3>
-            <span class="tag is-info-light">SonicFX.click()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('info')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Info</h3>
+						<span class="tag is-info-light">SonicFX.info()</span>
+					</div>
+				</div>
 
-      </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('click')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Click</h3>
+						<span class="tag is-info-light">SonicFX.click()</span>
+					</div>
+				</div>
 
-      <div class="heading has-text-grey-light mb-4">Gaming Sound FXs Sandbox</div>
-      <div class="columns is-multiline is-mobile mb-6">
+			</div>
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('celebration')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Celebration</h3>
-            <span class="tag is-info-light">SonicFX.celebration()</span>
-          </div>
-        </div>
+			<h2 class="title is-4 mt-6">🎮 Gaming Sound FXs Sandbox</h2>
+			<div class="columns is-multiline is-mobile mb-6">
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('levelUp')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Level Up</h3>
-            <span class="tag is-info-light">SonicFX.levelUp()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('celebration')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Celebration</h3>
+						<span class="tag is-info-light">SonicFX.celebration()</span>
+					</div>
+				</div>
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('laser')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Laser</h3>
-            <span class="tag is-info-light">SonicFX.laser()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('levelUp')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Level Up</h3>
+						<span class="tag is-info-light">SonicFX.levelUp()</span>
+					</div>
+				</div>
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('powerUp')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Power Up</h3>
-            <span class="tag is-info-light">SonicFX.powerUp()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('laser')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Laser</h3>
+						<span class="tag is-info-light">SonicFX.laser()</span>
+					</div>
+				</div>
 
-        <div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('unlock')">
-          <div class="box fx-card has-text-centered">
-            <h3 class="is-size-6 font-weight-bold mb-2">Unlock</h3>
-            <span class="tag is-info-light">SonicFX.unlock()</span>
-          </div>
-        </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('powerUp')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Power Up</h3>
+						<span class="tag is-info-light">SonicFX.powerUp()</span>
+					</div>
+				</div>
 
-      </div>
+				<div class="column is-6-mobile is-4-tablet is-2-desktop" onclick="trigger('unlock')">
+					<div class="box fx-card has-text-centered">
+						<h3 class="is-size-6 font-weight-bold mb-2">Unlock</h3>
+						<span class="tag is-info-light">SonicFX.unlock()</span>
+					</div>
+				</div>
 
-      <div class="box">
-        <h3 class="title is-5 mb-3">💡 Framework Integration Snippet</h3>
-        <pre class="has-background-black-bis has-text-link-light p-4" style="border-radius: 6px; overflow-x: auto;"><code>// Simple structural usage example
+			</div>
+
+      <h3 class="title is-4 mt-6">💡 Framework Integration Snippet</h3>
+			<div class="box">
+				<pre class="has-background-black-bis has-text-link-light p-4"
+					style="border-radius: 6px; overflow-x: auto;"><code>// Simple structural usage example
 document.querySelector('#action-button').addEventListener('click', () => {
   SonicFX.click(); // Fires mechanical micro-transient tone
   
@@ -161,18 +173,17 @@ document.querySelector('#action-button').addEventListener('click', () => {
     SonicFX.error();   // Fires descending fallback error notice
   });
 });</code></pre>
-      </div>
+			</div>
 
-    </div>
-  </section>
+		</div>
+	</section>
 
-  <script src="https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.min.js"></script>
 
-  <script>
-    const muteBtn = document.getElementById('muteBtn');
+	<script>
+		const muteBtn = document.getElementById('muteBtn');
     const muteIcon = document.getElementById('muteIcon');
     const muteText = document.getElementById('muteText');
-    let c_timeout = null;
 
     function trigger(method) {
       if (typeof SonicFX === 'undefined') {
@@ -207,29 +218,30 @@ document.querySelector('#action-button').addEventListener('click', () => {
         muteText.textContent = 'Mute Audio';
       }
     });
+    
+    function copyCDNLink( el ) {
+  		let c_timeout = null;
+      let cdn_link = el.dataset.text;
+  try {
+    navigator.clipboard.writeText( cdn_link ).then( () => {
+      console.log( "Copied" );
+      el.querySelector( "#copyCDNLink" ).classList.remove( "fa-copy" );
+      el.querySelector( "#copyCDNLink" ).classList.add( "fa-check" );
+      el.setAttribute( "disabled", "" );
+      c_timeout = setTimeout( () => {
+        el.querySelector( "#copyCDNLink" ).classList.remove( "fa-check" );
+        el.querySelector( "#copyCDNLink" ).classList.add( "fa-copy" );
+        el.removeAttribute( "disabled" );
+      }, 3000);
 
-    function copyCDNLink(el) {
-      clearTimeout(c_timeout);
-      const cdn_link = 'https://cdn.jsdelivr.net/gh/sumitkarn12/SonicFX@latest/src/sonicfx.js';
-      console.log(cdn_link)
-      try {
-        navigator.clipboard.writeText(cdn_link).then(() => {
-          console.log("Copied");
-          el.querySelector("#copyCDNLink").classList.remove("fa-copy");
-          el.querySelector("#copyCDNLink").classList.add("fa-check");
-          c_timeout = setTimeout(() => {
-            el.querySelector("#copyCDNLink").classList.remove("fa-check");
-            el.querySelector("#copyCDNLink").classList.remove("fa-copy");
-          }, 3000);
-
-        }).catch(e => console.error(e));
-      } catch (err) {
-        console.log("e", err)
-        alert('Failed to copy: ', JSON.stringify(err));
-      }
+    }).catch( e => console.error(e) );
+  } catch (err) {
+    console.log( "e", err )
+    alert('Failed to copy: ', JSON.stringify( err ) );
+  }
     }
 
-  </script>
+	</script>
 </body>
 
 </html>
